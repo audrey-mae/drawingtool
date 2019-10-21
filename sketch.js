@@ -1,7 +1,6 @@
 
 let paint_mode = false
-
-let shape_mode = false
+//let hue = 0
 
 function mouseClicked() {
 	print(int(mouseX), int(mouseY))
@@ -11,15 +10,15 @@ function setup() {
 	
 	let canvas = createCanvas(400, 300)
 	canvas.parent("p5")
+	
 
-	//noStroke()
 	rect(0, 0, width, height)
-	noFill()
+	
 
+	noFill()
 	stroke(0)
 	ellipse(width/2, height/1.8, 20, 140)
-
-
+	
 	beginShape()
 		curveVertex(208, 125)
 		curveVertex(208, 125)
@@ -245,73 +244,88 @@ function draw () {
 	if (paint_mode == true) {
 
 		vertex(mouseX, mouseY)
-		strokeWeight(8)
-		line(mouseX, mouseY, mouseX, mouseY)
+		line(mouseX, mouseY, pmouseX, pmouseY)
 	}
 }
 
-	function mousePressed() {
-		paint_mode = true
-
-		}
-
-	function mouseReleased() {
-		paint_mode = false
-
-		}
-
-	function colorBlue() {
-		stroke(0, 0, 255, 100)
-		}
-
-	function colorRed() {
-		stroke(255, 0, 0, 100)
-
-		}
-
-	function colorGreen() {
-		stroke(0, 150, 3, 100)
-
-		}
-
-	function colorOrange() {
-		stroke(255, 153, 0)
-	}
-
-	function colorYellow() {
-		stroke(255, 234, 0)
-	}
-
-	function colorPurple() {
-		stroke(140, 0, 255)
-	}
-
-	function colorBlack() {
-		stroke(0)
-	}
-
-	function eraser() {
-		stroke(255)
-
-	}
-
-function shape() {
-
-	if (shape_mode == true) {
-		ellipse(mouseX, mouseY, 5, 5)
-		strokeWeight(3)
-
-	}
-
-	function mousePressed(){
-		shape_mode = true
-	}
-
-	function mouseReleased() {
-		shape_mode = false
-	}
-
+function mousePressed() {
+	paint_mode = true
 }
+
+function mouseReleased() {
+	paint_mode = false
+}
+
+function colorBlue() {
+	stroke(0, 0, 255, 100)
+}
+
+function colorRed() {
+	stroke(255, 0, 0, 100)
+}
+
+function colorGreen() {
+	stroke(0, 150, 3, 100)
+}
+
+function colorOrange() {
+	stroke(255, 153, 0)
+}
+
+function colorYellow() {
+	stroke(255, 234, 0)
+}
+
+function colorPurple() {
+	stroke(140, 0, 255)
+}
+
+function colorBlack() {
+	stroke(0)
+}
+
+function colorBrown() {
+	stroke(79, 54, 29)
+}
+
+function colorWhite() {
+	stroke(255)
+}
+
+function colorGrey() {
+	stroke(168, 168, 168)
+}
+
+function eraser() {
+	stroke(255)
+}
+
+function pencil() {
+	strokeWeight(1) 
+}
+
+function pen() {
+	strokeWeight(3) 
+}
+
+function brush() {
+	strokeWeight(6) 
+}
+
+function fat_brush() {
+	strokeWeight(9) 
+}
+
+function fatter_brush() {
+	strokeWeight(12) 
+}
+
+
+
+
+
+
+
 
 
 
